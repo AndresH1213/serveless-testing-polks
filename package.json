@@ -1,12 +1,12 @@
 {
-  "name": "serverless-hexagonal-template",
+  "name": "meetup",
   "version": "1.0.0",
   "description": "Highly opinionated project template for Serverless Framework that follows and applies hexagonal architecture principle to serverless world. Prepared with easy testing in mind.",
   "author": "Pawel Zubkiewicz",
   "license": "MIT",
   "scripts": {
     "eslint": "node_modules/.bin/eslint src/**/*.js --ignore-pattern node_modules/",
-    "dotenv": "STAGE=${STAGE:=dev} && sls export-env --all -s $STAGE",
+    "dotenv": "sls export-env --all --filename .awsenv -s dev",
     "test": "jest --config config/unit.jest.config.js",
     "integration": "npm run dotenv && jest --config config/integration.jest.config.js",
     "int": "jest --config config/integration.jest.config.js",
